@@ -41,14 +41,14 @@ casper.then ->
 #CRAIGSLIST FORM
 casper.then ->
   @fill "form#postingForm",
-    FromEMail: "thomas@gmail.com"
-    ConfirmEMail: "thomas@gmail.com"
-    contact_phone: "1234567890"
+    FromEMail: "tega.metmuseum@gmail.com"
+    ConfirmEMail: "tega.metmuseum@gmail.com"
+    contact_phone: "3472593073"
     contact_name: "Thomas"
-    PostingTitle: "title"
+    PostingTitle: casper.cli.get("title")
     postal: "10028"
-    PostingBody: "description*******"
-    sale_size: "dimensions*******"
+    PostingBody: "This is a rare antique/collectors item" +casper.cli.get("whereNarrow") + "that bought this years ago in" + casper.cli.get("whereBroad") + "/n I think it was from" + casper.cli.get("Medium")
+    sale_size: casper.cli.get("dimensions")
     xstreet0: "1000 5th Avenue"
     city: "New York"
     region: "NY"
