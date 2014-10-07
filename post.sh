@@ -23,14 +23,19 @@ description=$(echo $artwork |jq -r '.description')
 dimensions=$(echo $artwork |jq -r '.dimensions')
 
 
-whereBroad=$(echo $artwork |jq -r '.whereList[0]')
-whereNarrow=$(echo $artwork |jq -r '.whereList[1]')
-medium=$(echo $medium |jq -r '.Medium')
+whereBroad=$(echo $artwork |jq -r '.whereList[0].name')
+whereNarrow=$(echo $artwork |jq -r '.whereList[1].name')
+medium=$(echo $artwork |jq -r '.medium')
+provenance=$(echo $artwork |jq -r '.provenance')
+department=$(echo $artwork |jq -r '.department')
+culture=$(echo $artwork |jq -r '.culture')
 
 #get image
 imageUrl=$(echo $artwork | jq -r '.currentImage.imageUrl')  #-r means that we get the raw url
 imageName=$(echo $artwork | jq -r '.currentImage.imageFileName')  #-r means that we get the raw url
 imageLocation=$(pwd)/$imageName
+
+
 
 curl -OL $imageUrl # O is download whats at the apir and L means follow redirect
 
@@ -39,7 +44,7 @@ curl -OL $imageUrl # O is download whats at the apir and L means follow redirect
 popd
 
 # run the script with variables
-casperjs casper6.coffee --title=$title --description=$description --dimensions=$dimensions --imageLocation=$imageLocation
+casperjs casperCraigslist.coffee --title=$title --description=$description --dimensions=$dimensions --imageLocation=$imageLocation
 
 
 

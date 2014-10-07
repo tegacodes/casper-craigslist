@@ -47,7 +47,11 @@ casper.then ->
     contact_name: "Thomas"
     PostingTitle: casper.cli.get("title")
     postal: "10028"
-    PostingBody: "This is a rare antique/collectors item" +casper.cli.get("whereNarrow") + "that bought this years ago in" + casper.cli.get("whereBroad") + "/n I think it was from" + casper.cli.get("Medium")
+    PostingBody: "Make an offer on this"+ casper.cli.get("title") + casper.cli.get("medium")+". A gorgeous examples of"+ casper.cli.get("department")+". This is a rare antique/collectors item
+that I bought this years ago in "+ casper.cli.get("whereNarrow") +" "+ casper.cli.get("whereBroad")+". I think it was from" + casper.cli.get("provenance")+". This item is in excellent condition for its age - I'm pretty sure it is"+casper.cli.get("culture")+ " and would look fantastic in your New York City apartment.
+Contact me to make me an offer!! All offers will be considered!!
+This ad will be taken down immediately upon sale.
+If you are responding to this ad please put the words serious buyer in the subject or I will assume you are a spam bot and will ignore you."
     sale_size: casper.cli.get("dimensions")
     xstreet0: "1000 5th Avenue"
     city: "New York"
