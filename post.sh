@@ -44,10 +44,7 @@ curl -OL $imageUrl # O is download whats at the apir and L means follow redirect
 popd
 
 # run the script with variables
-casperjs casperCraigslist.coffee --title=$title --description=$description --dimensions=$dimensions --imageLocation=$imageLocation
-
-
-
+casperjs casperCraigslist.coffee --title="$title" --description="$description" --dimensions="$dimensions" --imageLocation="$imageLocation"
 
 #casperjs casper5.coffee ${title} ${description} ${dimensions} --foo=bar
 
